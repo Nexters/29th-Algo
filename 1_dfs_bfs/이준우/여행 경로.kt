@@ -7,19 +7,19 @@ class Solution {
             fromToMap.getOrPut(ticket[0]) { PriorityQueue<String>() }.add(ticket[1])
         }
 
-        fun dfs(curr: String, list: MutableList<String>) {
+        val answer =  mutableListOf<String>()
+        fun dfs(curr: String,) {
             while(fromToMap[curr] != null && fromToMap[curr]!!.isNotEmpty()) {
                 val next = fromToMap[curr]!!.poll()
-                dfs(next, list)
+                dfs(next)
             }
             
             // 현재 경로를 맨 앞에 추가
             // 탐색이 끝난 순으로 노드를 추가할 경우, 이는 경로의 반대 방향
-            list.add(0, curr)
+            answer.add(0, curr)
         }
 
-        val answer =  mutableListOf<String>()
-        dfs("ICN", answer)
+        dfs("ICN")
 
         return answer.toTypedArray()
     }
