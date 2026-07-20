@@ -1,5 +1,3 @@
-// 게임 맵 최단거리
-
 #include <vector>
 #include <stdio.h>
 #include <iostream>
