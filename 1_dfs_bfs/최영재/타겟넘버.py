@@ -8,9 +8,9 @@ def solution(numbers, target):
 
 
 def dfs(numbers, target, current_index, current_sum):
-    every_sign_is_decided = current_index == len(numbers)
+    is_decided = current_index == len(numbers)
 
-    if every_sign_is_decided:
+    if is_decided:
         reached_target = current_sum == target
         if reached_target:
             return 1
