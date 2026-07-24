@@ -1,3 +1,11 @@
+//
+//  1_프로세스.swift
+//  https://school.programmers.co.kr/learn/courses/30/lessons/42587
+//
+//  Created by jerry on 7/22/26.
+//
+
+
 /*
  운영체제가 아래의 원칙에 따라 프로세스를 관리했을 때,
  특정 프로세스가 몇 번째로 실행되는지
