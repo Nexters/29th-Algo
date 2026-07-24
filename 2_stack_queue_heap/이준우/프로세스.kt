@@ -1,3 +1,5 @@
+import java.util.*
+
 class Solution {
     // 우선순위, 몇 번째로 나오는지 궁금한 값
     fun solution(priorities: IntArray, location: Int): Int {
@@ -11,8 +13,7 @@ class Solution {
 
         // sp의 우선순위를 기준으로 p의 값을 추출
         // [1, 1, 9, 1, 1, 1] -> [9, 1, 1, 1, 1, 1]
-        val sp = ArrayDeque(priorities.sortedDescending())
-
+        val sp = PriorityQueue<Int>(reversedOrder()).apply {addAll(priorities.toList())}
         while(q.isNotEmpty()) {
             // 우선순위 검사
             // sp는 현재 q의 우선순위랑 동기화되어 있음
