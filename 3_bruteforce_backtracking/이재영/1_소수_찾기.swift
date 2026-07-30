@@ -71,16 +71,15 @@ extension Int {
     private var isEven: Bool { self % 2 == 0 }
     
     var isPrime: Bool {
-        // 2, 3 인 경우 소수
-        if self == 2 || self == 3 {
-            return true
-            
-        // 2보다 작거나, 짝수인 경우 필터
-        } else if self < 2 || isEven {
+        // 2보다 크고 홀수
+        guard self > 2 && !isEven else { return self == 2 }
+        
+        let roundedSqrt = self.roundedSqrt
+        // 완전제곱수 미리 필터
+        guard self != roundedSqrt * roundedSqrt else {
             return false
         }
-        
-        // 3부터 제곱근까지 홀수만 탐색
+        // (제곱근이 3이상인 경우) 3부터 제곱근까지 홀수만 탐색
         for div in stride(from: 3, through: roundedSqrt, by: 2) {
             guard self % div != 0 else { return false }
         }
