@@ -5,7 +5,17 @@
 
 import Foundation
 /*
- stack 에서의 top 을 최솟값으로 유지한다.
+ stack 을 내림차순으로 정렬되게 유지한다.
+ 
+ stack 에 먼저 들어간 수는 가장 높은 자릿 수를 맡게된다.
+ 
+ (새로 담을 인자가 top 초과라면, pop) 루프
+ 새로 담을 인자가 top 이하라면, push)
+ 
+ 1. 제거가능한 수 만큼 제거했다면, 남은 숫자를 모두 담아 수 완성
+ 
+ 2. numbers를 모두 순행했을 때, 제거 가능 숫자가 남았다면, 남은 숫자만큼 top 에서 제거, top은 항상 최솟값이기 때문에 가능 
+ 
  
 */
 func solution(_ numbers: String, _ k: Int) -> String {
